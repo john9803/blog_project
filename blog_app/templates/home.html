@@ -1,0 +1,35 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+<h1 style="font-family: Courier, monospace; color:yellowgreen; background-color: teal;";> Hi! Welcome to ClOTh-Up.</h1>
+
+{%extends 'base.html'%}
+{% block contents%}
+  
+  {% for blog in blogs.all %}
+    <div class = "container">
+    <h1></h1> 
+    <p></p>
+    <p>
+      {#<a href= "{% url 'detail' blog.id %}"> ...more</a>#}
+    </p>
+    
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{blog.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
+    <p class="card-text">{{blog.summary}}</p>
+    <a href="#" class="card-link">👍 Nice!</a>
+    <a href="#" class="card-link">👎 FXXK!</a>
+  </div>
+</div>
+
+    </div>
+
+    
+  {% endfor %}
+
+  </body> 
+  {%endblock%}
